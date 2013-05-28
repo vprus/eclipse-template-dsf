@@ -7,8 +7,10 @@ Specifically, new "Report DSF Context" command is added to debug view's popup me
 that either reports the pid of the process that contains the selected item, or reports
 that no process id is known.
 
-Because the primary goal is to demostrate DSF operations, there are some simplifications,
-in particular:
+The operation also shows some basic enablement/disablement - the operation has 10 second
+delay, and the command cannot be invoved on a debug element in the same process until
+the previous operation is done.
 
-- I don't try to enable/disable this command
-- The reporting of pid uses System.out.println.
+For simplicity, System.println is used.
+
+

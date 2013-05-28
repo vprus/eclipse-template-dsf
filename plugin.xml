@@ -6,7 +6,7 @@
          name="DSF Template Commands"
          point="org.eclipse.ui.commands">
       <command
-            defaultHandler="vprus.dsf.template.ReportDsfContextHandler"
+            defaultHandler="vprus.dsf.template.ReportDsfContextCommandHandler"
             id="vprus.dsf-template.commands.report"
             name="Report DSF Context">
       </command>
@@ -24,6 +24,22 @@
                style="push">
          </command>
       </menuContribution>
+   </extension>
+   <extension
+         point="org.eclipse.core.runtime.adapters">
+      <factory
+            adaptableType="org.eclipse.cdt.dsf.ui.viewmodel.datamodel.IDMVMContext"
+            class="vprus.dsf.template.AdapterFactory">
+         <adapter
+               type="adapter.Adapter1">
+         </adapter>
+      </factory>
+   </extension>
+   <extension
+         point="org.eclipse.ui.startup">
+      <startup
+            class="vprus.dsf.template.Startup">
+      </startup>
    </extension>
 
 </plugin>
